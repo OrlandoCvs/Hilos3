@@ -25,22 +25,21 @@ public class Liebre extends Thread{
             }
 
             if (pasos < 20 && pasos <= 40) {
-                if((posicion + 9) > 69){ //Comprobar que la nueva posición no exceda el tamaño
+                if((posicion + 9) > 69){
                     posicion = 69;
                 } else {
                     pista[posicion] = 0;
                     posicion = posicion + 9;
                     pista[posicion] = 'L';
                 }
-                //De esta manera imprimimos espacios vacios si no está la liebra en esa posición
                 Posiciones(pista);
-                ganador = win(posicion, ganador); //Comprobar si alcanzó la menta (posición == 70)
+                ganador = win(posicion, ganador);
             }
             //Fin si da un gran salto
             //Inicio resbalón grande
             if (pasos > 40 && pasos <= 50) {
                 pista[posicion] = 0;
-                if ((posicion - 12) < 0) { //Comprobar que el descenso no sea menor a 0 (1 si tomamos el tamaño)
+                if ((posicion - 12) < 0) {
                     posicion = 0;
                 } else {
                     posicion = posicion - 12;
@@ -87,7 +86,7 @@ public class Liebre extends Thread{
     public static boolean win(int posicion, boolean ganador){
         if (posicion == 69){
             ganador = true;
-            System.out.printf("La Liebre es la ganadora ");
+            System.out.printf("Ganó la liebre ");
 
         }
         return ganador;

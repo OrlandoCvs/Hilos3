@@ -62,7 +62,7 @@
         public static boolean win(int posicion, boolean ganador) {
             if (posicion == 69) {
                 ganador = true;
-                System.out.printf("La Tortuga es la ganadora ");
+                System.out.printf("Ganó la tortuga ");
             }
             return ganador;
         }
